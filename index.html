@@ -11,40 +11,121 @@
             padding: 0;
             background-color: #f4f7fc;
             color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #4caf50, #2f855a);
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
         header h1 {
-            font-size: 2.5em;
+            font-size: 2.6em;
+            margin: 0;
         }
         header p {
-            font-size: 1.2em;
-            margin-top: 10px;
+            font-size: 1.1em;
+            margin: 10px 0 20px;
         }
-        .container {
-            padding: 20px;
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .nav-links a {
+            background-color: rgba(255, 255, 255, 0.18);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 22px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+        .nav-links a:hover,
+        .nav-links a:focus {
+            background-color: rgba(255, 255, 255, 0.32);
+        }
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
         }
         .section {
-            margin-bottom: 20px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 15px 35px rgba(76, 175, 80, 0.12);
+            margin-bottom: 30px;
         }
         .section h2 {
-            color: #4CAF50;
+            color: #2f855a;
+            margin-top: 0;
         }
-        .contact-info {
-            font-size: 1.1em;
+        .info-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+        .highlight-card {
+            background-color: #f0fdf4;
+            border-left: 4px solid #4caf50;
+            padding: 18px;
+            border-radius: 12px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .document-list li {
+            margin-bottom: 10px;
+        }
+        .document-list a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .document-list a:hover,
+        .document-list a:focus {
+            text-decoration: underline;
+        }
+        .media-grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+        .media-card {
+            background-color: #f8fafc;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 24px rgba(15, 118, 110, 0.12);
+        }
+        .media-card img,
+        .media-card video {
+            width: 100%;
+            display: block;
+        }
+        .media-card figcaption {
+            padding: 12px 16px;
+            font-size: 0.95em;
         }
         footer {
-            background-color: #4CAF50;
+            background-color: #1f2937;
             color: white;
             text-align: center;
-            padding: 10px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+            padding: 24px 12px;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (max-width: 640px) {
+            header {
+                padding: 32px 16px;
+            }
+            header h1 {
+                font-size: 2.2em;
+            }
+            .section {
+                padding: 24px;
+            }
         }
     </style>
 </head>
@@ -52,35 +133,73 @@
 
     <header>
         <h1>Wenyu Shan</h1>
-        <p>Undergraduate Student of Peking University | Major: Physics</p>
+        <p>Undergraduate Student at Peking University · Physics Major</p>
+        <nav class="nav-links">
+            <a href="#info">My Information</a>
+            <a href="#academic">Academic</a>
+            <a href="#albums">Albums</a>
+        </nav>
     </header>
 
-    <div class="container">
-        <div class="section">
-            <h2>About Me</h2>
-            <p>👋 Hi, I’m Wenyu Shan! I am an undergraduate student at Peking University majoring in Physics. I'm passionate about AI for Science and Machine Learning.</p>
-        </div>
+    <main>
+        <section id="info" class="section">
+            <h2>My Information</h2>
+            <div class="info-grid">
+                <div>
+                    <p>👋 Hi, I’m Wenyu Shan. I am an undergraduate physics student at Peking University who is fascinated by how artificial intelligence can accelerate scientific discovery.</p>
+                    <p>💡 Beyond the classroom, I enjoy building machine learning experiments that bridge physics, climate science, and data-driven insights.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>Email: <a href="mailto:2200011454@stu.pku.edu.cn">2200011454@stu.pku.edu.cn</a></li>
+                        <li>Email: <a href="mailto:simonshan528@gmail.com">simonshan528@gmail.com</a></li>
+                        <li>Location: Beijing, China</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <div class="section">
-            <h2>Interests</h2>
-            <p>👀 I’m particularly interested in AI and ist application for Physics.</p>
-            <p>🌱 I am currently exploring Machine Learning techniques and trying to use them in Atmospheric Science.</p>
-        </div>
-
-        <div class="section">
-            <h2>Collaboration</h2>
-            <p>💞️ I am looking to collaborate on machine learning and AI for Science projects.</p>
-        </div>
-
-        <div class="section contact-info">
-            <h2>Contact Me</h2>
-            <p>📫 You can reach me at:</p>
+        <section id="academic" class="section">
+            <h2>Academic Portfolio</h2>
+            <p>Current focus areas and a space to showcase my publications, reports, and ongoing projects.</p>
+            <h3>Research Interests</h3>
             <ul>
-                <li>Email: <a href="mailto:2200011454@stu.pku.edu.cn">2200011454@stu.pku.edu.cn</a></li>
-                <li>Email: <a href="mailto:simonshan528@gmail.com">simonshan528@gmail.com</a></li>
+                <li>AI for Science with emphasis on computational physics.</li>
+                <li>Machine learning applications in atmospheric and climate science.</li>
+                <li>Numerical simulations and data-driven modeling.</li>
             </ul>
-        </div>
-    </div>
+            <h3>Selected Works</h3>
+            <p>� Upload your documents to a <code>documents/</code> folder and update the links below.</p>
+            <ul class="document-list">
+                <li><a href="documents/research-summary.pdf" target="_blank" rel="noopener">Research Summary (PDF)</a></li>
+                <li><a href="documents/poster-ai-for-climate.pdf" target="_blank" rel="noopener">Poster: AI for Climate Insights</a></li>
+                <li><a href="documents/cv-wenyu-shan.pdf" target="_blank" rel="noopener">Curriculum Vitae</a></li>
+            </ul>
+        </section>
+
+        <section id="albums" class="section">
+            <h2>Albums</h2>
+            <p>A peek into my campus life, lab adventures, and travels. Replace the placeholders with your own media.</p>
+            <div class="media-grid">
+                <figure class="media-card">
+                    <img src="https://via.placeholder.com/600x400?text=Upload+Photo+1" alt="Upload Photo 1">
+                    <figcaption>Photo highlight — lab setup</figcaption>
+                </figure>
+                <figure class="media-card">
+                    <img src="https://via.placeholder.com/600x400?text=Upload+Photo+2" alt="Upload Photo 2">
+                    <figcaption>Field observation trip</figcaption>
+                </figure>
+                <figure class="media-card">
+                    <video controls>
+                        <source src="media/video-project.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <figcaption>Project demo video</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>Made with ❤️ by Wenyu Shan</p>
